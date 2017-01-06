@@ -824,16 +824,16 @@ class IssueTests(unittest.TestCase):
                 'name': 'Bug'},
             # 'customfield_10022': 'XSS',
             'priority': {
-                'name': 'Major'}},
-            {'project': {
+                'name': 'Major'}}, {
+            'project': {
                 'key': self.project_a},
-                'issuetype': {
-                    'name': 'InvalidIssueType'},
-                'summary': 'This issue will not succeed',
-                'description': "Should not be seen.",
-                'priority': {
-                'name': 'Blah'}},
-            {'project': {
+            'issuetype': {
+                'name': 'InvalidIssueType'},
+            'summary': 'This issue will not succeed',
+            'description': "Should not be seen.",
+            'priority': {
+                'name': 'Blah'}}, {
+            'project': {
                 'key': self.project_a},
                 'issuetype': {
                     'name': 'Bug'},
@@ -870,11 +870,11 @@ class IssueTests(unittest.TestCase):
     def test_create_issues_without_prefetch(self):
         field_list = [dict(project=self.project_b,
                            summary='Test issue created',
-                           description='some details',
+                           description='blahery',
                            issuetype={'name': 'Bug'}),
                       dict(project=self.project_a,
                            summary='Test issue #2',
-                           description='foo description',
+                           description='fooery',
                            issuetype={'name': 'Bug'})]
         issues = self.jira.create_issues(field_list, prefetch=False)
 
