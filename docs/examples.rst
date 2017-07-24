@@ -107,6 +107,15 @@ To pass additional options to Kerberos auth use dict ``kerberos_options``, e.g.:
 
 .. _jirashell-label:
 
+cookiestxt
+^^^^^^^^^^
+
+To access a corporate instance of JIRA that is authenticated behind some single sign-on solution, log in via Firefox with the `Export Cookies addon <https://addons.mozilla.org/EN-US/firefox/addon/export-cookies/>`_ and export the cookies.
+
+Pass a cookies.txt path ``cookiestxt`` constructor argument::
+
+    authed_jira = JIRA(cookiestxt="/tmp/cookies.txt")
+
 Issues
 ------
 
