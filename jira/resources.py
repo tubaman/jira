@@ -856,6 +856,8 @@ class User(Resource):
 
     def __eq__(self, other):
         """Comparison."""
+        if other is None:
+            return False
         try:
             return str(self.name) == str(other.name)
         except AttributeError:
