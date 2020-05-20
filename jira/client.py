@@ -4087,6 +4087,12 @@ class JIRA(object):
             base=self.AGILE_BASE_URL,
         )["contents"]
 
+    def completedIssuesEstimateSum(self, board_id, sprint_id):
+        """Return the total completed points this sprint."""
+        return self.sprint_report(
+            board_id, sprint_id,
+        )["completedIssuesEstimateSum"]["value"]
+
     def incompletedIssuesEstimateSum(self, board_id, sprint_id):
         """Return the total incompleted points this sprint."""
         return self.sprint_report(
